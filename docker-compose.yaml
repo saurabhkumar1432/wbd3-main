@@ -1,0 +1,94 @@
+# version: "3.9"
+
+# services:
+#   backend:
+#     build: 
+#       context: .
+#       dockerfile: './backend/Dockerfile'
+#     ports:
+#       - "9000:9000"
+#     environment:
+#       - MONGODB_URI=mongodb+srv://sahithi:sahithi@cluster0.ebh9w6j.mongodb.net
+#     command: ["node", "server.js"]
+#     depends_on:
+#       - database
+
+#   frontend:
+#     build: 
+#       context: .
+#       dockerfile: './client/Dockerfile'
+#     ports:
+#       - "3000:3000"
+#     volumes:
+#       - ./frontend:/app
+#     command: ["npm", "start"]
+#     depends_on:
+#       - backend
+
+#   database:
+#     image: mongo:latest
+#     ports:
+#       - "27017:27017"
+
+# version: "3.8"
+# services:
+#   mongodb:
+#     image: "mongo"
+#     volumes:
+#       - data:/data/db
+#   backend:
+#     build: ./backend
+#     ports:
+#       - "80:80"
+#     volumes:
+#       - logs:/logs
+#       - ./backend:/server
+#       - /node_modules
+#     depends_on:
+#       - mongodb
+#   frontend:
+#     build: ./client
+#     ports:
+#       - "3000:3000"
+#     volumes:
+#       - ./client/src:/app/src
+#     stdin_open: true
+#     tty: true
+#     depends_on:
+#       - backend
+
+# volumes:
+#   data:
+#   logs:
+version: '3.8'
+
+services:
+  mongo_db:
+    image: "mongo"
+    volumes:
+      - data:/data/db
+  backend:
+    build: ./backend   
+    ports:
+      - "80:80" 
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./frontend  
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+volumes:
+  data:
+  logs:        
+      
+  
+  

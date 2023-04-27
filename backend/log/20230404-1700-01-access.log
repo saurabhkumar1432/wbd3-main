@@ -1,0 +1,12 @@
+POST /api/user/login 200 226 - 423.912 ms
+GET /api/user/get-all-approved-doctors 304 - - 56.496 ms
+GET /api/user/get-all-approved-doctors 304 - - 12.348 ms
+POST /api/user/get-user-info-by-id 200 493 - 16.171 ms
+GET /api/admin/get-all-appointments 304 - - 12.875 ms
+GET /api/admin/get-all-appointments 200 2140 - 22.313 ms
+POST /api/user/login 200 226 - 610.550 ms
+GET /api/user/get-all-approved-doctors 304 - - 22.958 ms
+GET /api/user/get-all-approved-doctors 304 - - 14.586 ms
+POST /api/user/get-user-info-by-id 200 289 - 20.655 ms
+GET /api/doctor/get-appointments-by-doctor-id 304 - - 15.760 ms
+POST /api/user/login 200 226 - 303.655 ms

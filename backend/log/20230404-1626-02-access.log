@@ -1,0 +1,3 @@
+GET /api/user/get-all-approved-doctors 304 - - 36.237 ms
+POST /api/user/get-user-info-by-id 200 286 - 25.137 ms
+GET /api/user/get-all-approved-doctors 200 508 - 20.700 ms
